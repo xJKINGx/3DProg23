@@ -8,16 +8,20 @@
 
 #include <iostream>
 
+// Here is just a basic definition of the screen size
 const unsigned int SCREEN_WIDTH = 1280;
 const unsigned int SCREEN_HEIGHT = 720;
 
 int main()
 {
+    // OpenGL initializing functions
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+
+    // Here we make some points for 3 triangles
 
     // Vertices coordinates
     GLfloat vertices[] =
@@ -38,22 +42,28 @@ int main()
         5, 4, 1 // Upper triangle
     };
 
-
+    // Here we create the actual window that's gonna pop up
     GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Bababooey", NULL, NULL);
+    // if sentence to check nullptr exception
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
+    // Here we tell OpenGL to actually open the window we created
     glfwMakeContextCurrent(window);
 
     gladLoadGL();
 
+    // This I think sets the coordinates of the screen. 0,0 being the smallest values,
+    // and width, height being the max values
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+    // Here we tell OpenGL to use our shader files
     Shader shaderProgram("default.vert", "default.frag");
 
+    // Shader magic goes here
     VAO VAO1;
     VAO1.Bind();
 
@@ -66,25 +76,31 @@ int main()
     EBO1.Unbind();
 
 
-
-
-
-
+    // Without this while loop the window will close the second it opens
     while (!glfwWindowShouldClose(window))
     {
-        glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
+        // glClearColor sets the color of the background in rgba, going from 0.0f to 1.0f
+        glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        // Shaders activate
         shaderProgram.Activate();
         VAO1.Bind();
 
+        // The draw function will be moved eventually, the colors of the triangles can be
+        // changed in the default.frag file
         glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(window);
 
+        // PollEvents to make it so that the window actually listens for events
+        // like clicking the "X" button on the top right of the window for example.
         glfwPollEvents();
     }
 
+    // This is our garbage pile, we delete stuff we don't need here.
+    // If we reach this point the program is over, and we need to delete this stuff
+    // to save memory
     VAO1.Delete();
     VBO1.Delete();
     EBO1.Delete();
