@@ -15,9 +15,9 @@ TriangleSurface::TriangleSurface(std::string filename, bool ReadFileCheck)
 	}
 }
 
-void TriangleSurface::init(GLint matrixUniform)
+void TriangleSurface::init(/*GLint matrixUniform*/)
 {
-    mMatrixUniform = matrixUniform;
+    /*mMatrixUniform = matrixUniform;*/
 
     glGenVertexArrays(1, &mVAO);
     glBindVertexArray(mVAO);
@@ -47,10 +47,8 @@ void TriangleSurface::init(GLint matrixUniform)
 
 void TriangleSurface::draw()
 {
-
-    glBindVertexArray(mVAO);
+    /*glBindVertexArray(mVAO);
     glUniformMatrix4fv(mMatrixUniform, 1, GL_FALSE, mMatrix.constData());
-    glDrawArrays(GL_TRIANGLES, 0, mVertices.size());
-
+    glDrawArrays(GL_TRIANGLES, 0, mVertices.size());*/
 }
 

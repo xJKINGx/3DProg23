@@ -18,11 +18,12 @@ public:
 	VisualObject();
 	~VisualObject();
 
-	virtual void init(GLint matrixUniform) = 0;
+	virtual void init(/*GLint matrixUniform*/) = 0;
 	virtual void draw() = 0;
 
-protected:
 	std::vector<Vertex> mVertices;
+
+protected:
 
 	GLuint mVAO{ 0 };
 	GLuint mVBO{ 0 };

@@ -5,12 +5,14 @@
 #include "VAO.h"
 #include "VBO.h"
 #include "EBO.h"
+#include "XYZ.h"
 
 #include <iostream>
 
 // Here is just a basic definition of the screen size
 const unsigned int SCREEN_WIDTH = 1280;
 const unsigned int SCREEN_HEIGHT = 720;
+
 
 int main()
 {
@@ -21,8 +23,11 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
-    // Here we make some points for 3 triangles
+    // Other inits
+    XYZ* XYZptr = new XYZ();
 
+
+    // Here we make some points for 3 triangles
     // Vertices coordinates
     GLfloat vertices[] =
     {
@@ -76,11 +81,13 @@ int main()
     EBO1.Unbind();
 
 
+    XYZptr->init(/*1*/);
+
     // Without this while loop the window will close the second it opens
     while (!glfwWindowShouldClose(window))
     {
         // glClearColor sets the color of the background in rgba, going from 0.0f to 1.0f
-        glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+        glClearColor(0.07f, 0.13f, 0.17f, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Shaders activate
@@ -90,6 +97,8 @@ int main()
         // The draw function will be moved eventually, the colors of the triangles can be
         // changed in the default.frag file
         glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+
+        XYZptr->draw();
 
         glfwSwapBuffers(window);
 

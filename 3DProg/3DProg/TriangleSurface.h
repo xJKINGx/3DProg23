@@ -9,7 +9,7 @@ public:
 	TriangleSurface();
 	TriangleSurface(std::string filename, bool ReadFileCheck);
 
-	void init(GLint matrixUniform) override;
+	void init(/*GLint matrixUniform*/) override;
 	void draw() override;
 };
 
