@@ -18,11 +18,11 @@ public:
 	VisualObject();
 	~VisualObject();
 
-	virtual void init();
-	virtual void draw(Shader shader);
+	virtual void init(GLint matrixUniform) = 0;
+	virtual void draw() = 0;
 
 protected:
-	std::vector<Vertex*> mVertices;
+	std::vector<Vertex> mVertices;
 
 	GLuint mVAO{ 0 };
 	GLuint mVBO{ 0 };

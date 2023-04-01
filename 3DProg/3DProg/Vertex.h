@@ -2,6 +2,7 @@
 #define VERTEX_CLASS_H
 
 #include <glm/glm.hpp>
+#include <string>
 
 class Vertex
 {
@@ -12,6 +13,7 @@ public:
 
 	Vertex();
 	Vertex(float x, float y, float z, float r, float g, float b, float u, float v);
+	Vertex(std::string filename);
 };
 
 #endif
