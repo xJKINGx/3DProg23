@@ -1,2 +1,10 @@
-﻿  FileManager.cpp
+﻿  Cube.cpp
+  Curve.cpp
+  ShaderClass.cpp
+  TriangleSurface.cpp
+D:\Github Clones\3DProg23\3DProg\3DProg\TriangleSurface.cpp(54,51): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  VisualObject.cpp
+  XYZ.cpp
+  main.cpp
+  Generating Code...
   3DProg.vcxproj -> D:\Github Clones\3DProg23\3DProg\x64\Debug\3DProg.exe

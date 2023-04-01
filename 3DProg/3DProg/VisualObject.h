@@ -19,7 +19,9 @@ public:
 	~VisualObject();
 
 	virtual void init(GLint matrixUniform) = 0;
-	virtual void draw() = 0;
+	virtual void draw(Shader shader) = 0;
+
+	glm::mat4 mMatrix; // Model matrix
 
 protected:
 	std::vector<Vertex> mVertices;
@@ -27,8 +29,6 @@ protected:
 	GLuint mVAO{ 0 };
 	GLuint mVBO{ 0 };
 	GLint mMatrixUniform{ 0 };
-
-	glm::mat4 mMatrix; // Model Matrix
 };
 
 #endif

@@ -3,7 +3,7 @@
 
 TriangleSurface::TriangleSurface()
 {
-
+    mMatrix = glm::mat4(1.0f);
 }
 
 TriangleSurface::TriangleSurface(std::string filename, bool ReadFileCheck)
@@ -45,11 +45,12 @@ void TriangleSurface::init(GLint matrixUniform)
 
 }
 
-void TriangleSurface::draw()
+void TriangleSurface::draw(Shader shader)
 {
 
     glBindVertexArray(mVAO);
-    glUniformMatrix4fv(mMatrixUniform, 1, GL_FALSE, mMatrix.constData());
+    //glUniformMatrix4fv(mMatrixUniform, 1, GL_FALSE, shader);
+    shader.setMat4("model", mMatrix);
     glDrawArrays(GL_TRIANGLES, 0, mVertices.size());
 
 }
