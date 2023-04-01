@@ -1,9 +1,6 @@
-#ifndef XYZ_CLASS_H
-#define XYZ_CLASS_H
-
+#pragma once
 class XYZ
 {
 public:
 
 };
-#endif

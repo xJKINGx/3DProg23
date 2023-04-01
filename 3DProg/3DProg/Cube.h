@@ -1,9 +1,6 @@
-#ifndef CUBE_CLASS_H
-#define CUBE_CLASS_H
-
+#pragma once
 class Cube
 {
 public:
 
 };
-#endif

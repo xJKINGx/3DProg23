@@ -1,9 +1,6 @@
-#ifndef CURVE_CLASS_H
-#define CURVE_CLASS_H
-
+#pragma once
 class Curve
 {
 public:
 
 };
-#endif
