@@ -142,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Curve.cpp" />
     <ClCompile Include="EBO.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
@@ -150,18 +152,22 @@
     <ClCompile Include="VBO.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="XYZ.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default.frag" />
     <None Include="default.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Curve.h" />
     <ClInclude Include="EBO.h" />
     <ClInclude Include="ShaderClass.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="XYZ.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
