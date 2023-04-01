@@ -1,5 +1,8 @@
 #pragma once
-class Curve
+
+#include "VisualObject.h"
+
+class Curve : public VisualObject
 {
 public:
 

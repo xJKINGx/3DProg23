@@ -1,5 +1,8 @@
 #pragma once
-class Cube
+
+#include "VisualObject.h"
+
+class Cube : public VisualObject
 {
 public:
 

@@ -1,5 +1,8 @@
 #pragma once
-class XYZ
+
+#include "VisualObject.h"
+
+class XYZ : public VisualObject
 {
 public:
 
