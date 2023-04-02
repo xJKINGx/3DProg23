@@ -2,7 +2,7 @@
 
 VisualObject::VisualObject()
 {
-
+	mMatrix = glm::mat4(1.0f);
 }
 
 VisualObject::~VisualObject()
